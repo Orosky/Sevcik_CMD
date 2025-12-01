@@ -1,4 +1,5 @@
 name: Deploy to FTP
+
 on:
   push:
     branches: [ main_cz ]
@@ -9,22 +10,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Vytvoření názvu složky podle času
       - name: Create date folder name
         id: datefolder
         run: echo "FOLDER=$(date +'%d_%m_%Y___%H_%M')" >> $GITHUB_OUTPUT
 
-      - name: Create ZIP file
-        run: |
-          zip -r deploy.zip .
+      # Proměnná pro název zip souboru
+      - name: Create ZIP filename
+        id: zipname
+        run: echo "ZIPFILE=deploy_${{ steps.datefolder.outputs.FOLDER }}.zip" >> $GITHUB_OUTPUT
 
+      # Vytvoření ZIPu
+      - name: Create ZIP file
+        run: zip -r "${{ steps.zipname.outputs.ZIPFILE }}" .
+
+      # Upload na FTP
       - name: Upload ZIP via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          port: 21
+
+          # Lokální adresář
           local-dir: "./"
-          server-dir: "/public_html/${{ steps.datefolder.outputs.FOLDER }}/"
+
+          # Cesta na serveru je nyní v Secrets
+          server-dir: "${{ secrets.FTP_PATH }}${{ steps.datefolder.outputs.FOLDER }}/"
+
+          # Nahraje pouze ZIP
           exclude: |
-            !deploy.zip
             *
+            !${{ steps.zipname.outputs.ZIPFILE }}
