@@ -13,7 +13,11 @@ jobs:
         id: datefolder
         run: echo "FOLDER=$(date +'%d_%m_%Y___%H_%M')" >> $GITHUB_OUTPUT
 
-      - name: Deploy via FTP
+      - name: Create ZIP file
+        run: |
+          zip -r deploy.zip .
+
+      - name: Upload ZIP via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -21,3 +25,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: "./"
           server-dir: "/public_html/${{ steps.datefolder.outputs.FOLDER }}/"
+          exclude: |
+            !deploy.zip
+            *
