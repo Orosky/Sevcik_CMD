@@ -1,7 +1,7 @@
 name: Deploy to FTP
 on:
   push:
-    branches: [ main_cz ]  # nebo tvá hlavní větev
+    branches: [ main_cz ]
 
 jobs:
   ftp-deploy:
@@ -9,11 +9,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create date folder name
+        id: datefolder
+        run: echo "FOLDER=$(date +'%d_%m_%Y___%H_%M')" >> $GITHUB_OUTPUT
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: "./"        # složka s webem v repo
-          server-dir: "/public_html/"  # cesta na serveru
+          local-dir: "./"
+          server-dir: "/public_html/${{ steps.datefolder.outputs.FOLDER }}/"
