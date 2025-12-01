@@ -1,7 +1,7 @@
-# Projekt SMC‑D / SMC‑D‑CT‑WS
+# Projekt Ševčík CMD
 
 ## Popis  
-Tento projekt (SMC‑D / SMC‑D‑CT‑WS) slouží jako … *(sem vlož stručný popis podle účelu projektu — viz stránka projektu)*.
+Tento projekt slouží jako CMD příkazový řádek, který nahrazuje předinstalované řádky v některých funkcích
 
 ## Funkce / vlastnosti  
 - Podpora příkazového jazyka / skriptování založeného na Pythonu (Domain‑Specific Language / DSL). :contentReference[oaicite:0]{index=0}  
