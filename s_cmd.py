@@ -336,6 +336,43 @@ class sevcik:
 
 # COMMANDY PRO SÍŤOVÉ NASTAVENÍ
 class pripojuju:
+    def vazne_jsem_onlajn(cil="google"):
+        """
+        Testuje připojení pomocí ping na různé testovací adresy.
+        Podporované hodnoty:
+            "google"     -> 8.8.8.8
+            "cloudflare" -> 1.1.1.1
+            "opendns"    -> 208.67.222.222
+            "quad9"      -> 9.9.9.9
+            "mojeip"     -> 1.1.1.1 (alias)
+        Pokud není nic vyplněno, pingne google DNS.
+        """
+
+        testy = {
+            "google": "8.8.8.8",
+            "cloudflare": "1.1.1.1",
+            "opendns": "208.67.222.222",
+            "quad9": "9.9.9.9",
+            "mojeip": "1.1.1.1"
+        }
+
+        cil = cil.lower().strip() if isinstance(cil, str) else "google"
+        ip = testy.get(cil, testy["google"])  # default google
+
+        system = platform.system()
+        prikaz = ["ping", "-c", "1", ip] if system != "Windows" else ["ping", "-n", "1", ip]
+
+        try:
+            vysledek = subprocess.run(prikaz, capture_output=True)
+            if vysledek.returncode == 0:
+                print(f"✔️  Online (odpověď od {ip})")
+                return True
+            else:
+                print(f"❌  Offline (žádná odpověď od {ip})")
+                return False
+        except Exception as e:
+            print("Chyba při pingování:", e)
+            return False
     @staticmethod
     def ktera_ip_je_moje():
         """
