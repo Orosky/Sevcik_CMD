@@ -1,4 +1,3 @@
-
 import platform
 import os
 import time
@@ -17,6 +16,28 @@ try:
     TKINTER_AVAILABLE = True
 except ImportError:
     TKINTER_AVAILABLE = False
+
+# Pro tab completion
+READLINE_AVAILABLE = False
+readline = None
+try:
+    # Zkusíme importovat readline
+    if platform.system() == "Windows":
+        try:
+            import pyreadline3 as readline
+            READLINE_AVAILABLE = True
+        except ImportError:
+            try:
+                import readline
+                READLINE_AVAILABLE = True
+            except ImportError:
+                pass
+    else:
+        # Linux/macOS
+        import readline
+        READLINE_AVAILABLE = True
+except ImportError:
+    READLINE_AVAILABLE = False
 
 
 print("""
@@ -373,6 +394,42 @@ class pripojuju:
         except Exception as e:
             print("Chyba při pingování:", e)
             return False
+    
+    @staticmethod
+    def kudy_jdes(ip=None):
+        """
+        Provede traceroute na zadanou IP adresu nebo doménu.
+        Pokud není zadána žádná IP, použije se google.com jako výchozí.
+        """
+        if ip is None:
+            cil = "google.com"
+        else:
+            cil = str(ip).strip()
+        
+        system = platform.system()
+        
+        print(f"🛤️  Provádím traceroute na {cil}...")
+        print("=" * 60)
+        
+        try:
+            if system == "Windows":
+                # Windows používá tracert
+                vysledek = subprocess.run(["tracert", cil], 
+                                         capture_output=False,
+                                         text=True)
+            else:
+                # Linux a macOS používají traceroute
+                vysledek = subprocess.run(["traceroute", cil], 
+                                         capture_output=False,
+                                         text=True)
+            
+            print("=" * 60)
+        except FileNotFoundError:
+            print(f"❌ Chyba: Příkaz pro traceroute není k dispozici na tomto systému.")
+            print("Na Windows použijte 'tracert', na Linux/macOS 'traceroute'.")
+        except Exception as e:
+            print(f"❌ Chyba při provádění traceroute: {e}")
+    
     @staticmethod
     def ktera_ip_je_moje():
         """
@@ -475,6 +532,136 @@ class odlesk_plesky:
         else:
             print("Příkaz zrušen uživatelem.")
 
+# TAB COMPLETION FUNKCE
+def ziskej_dostupne_prikazy():
+    """
+    Vrací seznam všech dostupných příkazů (třídy a jejich metody).
+    """
+    prikazy = []
+    
+    # Třídy a jejich metody
+    tridy = {
+        'pls': ['helpni', 'helpniclass', 'info_o_tobe'],
+        'mluvic': ['vycisti', 'rekni'],
+        'pleska': ['infosys', 'kdo_su_ja', 'jaky_cislo_jsi'],
+        'sevcik': ['vypis_slozky_ve_slozce', 'co_je_tu', 'otevri_soubor', 'zkopiruj_soubor_do', 'znovunacti'],
+        'pripojuju': ['vazne_jsem_onlajn', 'kudy_jdes', 'ktera_ip_je_moje'],
+        'odlesk_plesky': ['bud_buh']
+    }
+    
+    # Přidá názvy tříd
+    prikazy.extend(tridy.keys())
+    
+    # Přidá třídy.metody
+    for trida, metody in tridy.items():
+        for metoda in metody:
+            prikazy.append(f"{trida}.{metoda}")
+    
+    return prikazy
+
+# Globální proměnná pro ukládání matches při tab completion
+_tab_matches = []
+
+def dokonci_prikaz(text, stav):
+    """
+    Funkce pro tab completion - readline API.
+    text: aktuálně zadaný text
+    stav: index návrhu (0, 1, 2, ...)
+    """
+    global _tab_matches
+    
+    # Pokud je stav 0, znovu načte matches
+    if stav == 0:
+        dostupne = ziskej_dostupne_prikazy()
+        
+        # Pokud text končí tečkou (např. "pls."), přidáme i metody bez tečky
+        if text.endswith('.'):
+            # Najdeme třídu
+            trida = text[:-1]  # odstraníme tečku
+            # Přidáme metody této třídy
+            tridy = {
+                'pls': ['helpni', 'helpniclass', 'info_o_tobe'],
+                'mluvic': ['vycisti', 'rekni'],
+                'pleska': ['infosys', 'kdo_su_ja', 'jaky_cislo_jsi'],
+                'sevcik': ['vypis_slozky_ve_slozce', 'co_je_tu', 'otevri_soubor', 'zkopiruj_soubor_do', 'znovunacti'],
+                'pripojuju': ['vazne_jsem_onlajn', 'kudy_jdes', 'ktera_ip_je_moje'],
+                'odlesk_plesky': ['bud_buh']
+            }
+            if trida in tridy:
+                _tab_matches = [f"{trida}.{metoda}" for metoda in tridy[trida]]
+            else:
+                _tab_matches = []
+        else:
+            # Normální filtrování
+            _tab_matches = [cmd for cmd in dostupne if cmd.startswith(text)]
+        
+        if not _tab_matches:
+            return None
+    
+    # Vrací návrh na daném indexu nebo None, pokud už nejsou žádné
+    try:
+        return _tab_matches[stav]
+    except IndexError:
+        return None
+
+def nastav_tab_completion():
+    """
+    Nastaví tab completion pomocí readline, pokud je dostupné.
+    """
+    if not READLINE_AVAILABLE:
+        return False
+    
+    try:
+        # Nastaví completer funkci
+        readline.set_completer(dokonci_prikaz)
+        # Nastaví tab jako klávesu pro completion
+        readline.parse_and_bind("tab: complete")
+        return True
+    except Exception:
+        return False
+
+def input_s_completion(prompt):
+    """
+    Wrapper pro input() s podporou tab completion.
+    """
+    if READLINE_AVAILABLE:
+        try:
+            return input(prompt)
+        except (EOFError, KeyboardInterrupt):
+            raise
+    else:
+        # Fallback na normální input
+        return input(prompt)
+
+def je_admin_rezim():
+    """
+    Zjistí, zda je aplikace spuštěna s administrátorskými oprávněními.
+    Vrací True pokud je v admin režimu, jinak False.
+    """
+    if platform.system() == "Windows":
+        try:
+            # Zkontroluje, zda má uživatel administrátorská oprávnění
+            return ctypes.windll.shell32.IsUserAnAdmin() != 0
+        except:
+            return False
+    else:
+        # Na Unix systémech zkontroluje, zda je UID 0 (root)
+        try:
+            return os.geteuid() == 0
+        except:
+            return False
+
+def ziskej_prompt():
+    """
+    Vrací prompt podle aktuálního režimu.
+    Admin režim: #$>
+    Normální režim: &#>
+    """
+    if je_admin_rezim():
+        return "#$> "
+    else:
+        return "&#> "
+
 def main():
     # Kontrola verze při spuštění
     try:
@@ -489,9 +676,16 @@ def main():
         # Tichá chyba - aplikace pokračuje
         pass
     
+    # Nastaví tab completion
+    if nastav_tab_completion():
+        print("💡 Tip: Stiskni Tab pro automatické doplnění příkazů!")
+    
     print("Ševčík CMD je aktuálně spuštěna, pokud chceš pomoct napiš pls.helpni().")
+    if je_admin_rezim():
+        print("⚠️  ADMIN REŽIM: Aplikace běží s administrátorskými oprávněními!")
+    
     while True:
-        cmd = input("&#> ").strip()
+        cmd = input_s_completion(ziskej_prompt()).strip()
         if cmd.lower() == "koncim_s_tebou":
             print("Tak čus.")
             time.sleep(4)
