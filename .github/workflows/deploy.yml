@@ -15,17 +15,8 @@ jobs:
         id: datefolder
         run: echo "FOLDER=$(date +'%d_%m_%Y___%H_%M')" >> $GITHUB_OUTPUT
 
-      # Proměnná pro název zip souboru
-      - name: Create ZIP filename
-        id: zipname
-        run: echo "ZIPFILE=deploy_${{ steps.datefolder.outputs.FOLDER }}.zip" >> $GITHUB_OUTPUT
-
-      # Vytvoření ZIPu
-      - name: Create ZIP file
-        run: zip -r "${{ steps.zipname.outputs.ZIPFILE }}" .
-
       # Upload na FTP
-      - name: Upload ZIP via FTP
+      - name: Upload files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -33,13 +24,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
 
-          # Lokální adresář
+          # Lokální adresář k nahrání
           local-dir: "./"
 
-          # Cesta na serveru je nyní v Secrets
+          # Cesta na serveru je nyní v Secrets + složka podle data
           server-dir: "${{ secrets.FTP_PATH }}${{ steps.datefolder.outputs.FOLDER }}/"
 
-          # Nahraje pouze ZIP
-          exclude: |
-            *
-            !${{ steps.zipname.outputs.ZIPFILE }}
+          # Pokud chceš ignorovat určité soubory, můžeš použít exclude
+          # exclude: |
+          #   .git*
+          #   node_modules/
