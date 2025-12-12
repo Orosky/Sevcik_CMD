@@ -507,6 +507,68 @@ class pripojuju:
             print(f"Systém {system} není podporován pro detailní síťové informace.")
         
         print("=" * 60)
+    
+    @staticmethod
+    def box_adres():
+        """
+        Zobrazí ARP tabulku (mapování IP adres na MAC adresy).
+        ARP (Address Resolution Protocol) tabulka obsahuje informace o zařízeních
+        v lokální síti, se kterými byl počítač v komunikaci.
+        """
+        system = platform.system()
+        
+        print("=" * 60)
+        print("📦 ARP TABULKA (IP → MAC adresy)")
+        print("=" * 60)
+        
+        try:
+            if system == "Windows":
+                # Windows používá arp -a
+                result = subprocess.run(["arp", "-a"], 
+                                      capture_output=True, 
+                                      text=True, 
+                                      encoding='utf-8',
+                                      errors='ignore')
+                if result.returncode == 0:
+                    print(result.stdout)
+                else:
+                    print("❌ Nepodařilo se získat ARP tabulku.")
+                    print("Zkuste spustit 'arp -a' v příkazovém řádku s administrátorskými oprávněními.")
+            elif system == "Linux" or system == "Darwin":
+                # Linux a macOS také používají arp -a
+                result = subprocess.run(["arp", "-a"], 
+                                      capture_output=True, 
+                                      text=True, 
+                                      encoding='utf-8',
+                                      errors='ignore')
+                if result.returncode == 0:
+                    print(result.stdout)
+                else:
+                    # Na Linuxu může být třeba použít ip neigh
+                    if system == "Linux":
+                        try:
+                            result = subprocess.run(["ip", "neigh"], 
+                                                  capture_output=True, 
+                                                  text=True, 
+                                                  encoding='utf-8',
+                                                  errors='ignore')
+                            if result.returncode == 0:
+                                print(result.stdout)
+                            else:
+                                print("❌ Nepodařilo se získat ARP tabulku.")
+                        except FileNotFoundError:
+                            print("❌ Příkaz 'arp' ani 'ip' není k dispozici.")
+                    else:
+                        print("❌ Nepodařilo se získat ARP tabulku.")
+            else:
+                print(f"❌ Systém {system} není podporován pro zobrazení ARP tabulky.")
+        except FileNotFoundError:
+            print("❌ Chyba: Příkaz 'arp' není k dispozici na tomto systému.")
+            print("Zkuste použít systémový příkaz pro zobrazení ARP tabulky.")
+        except Exception as e:
+            print(f"❌ Chyba při získávání ARP tabulky: {e}")
+        
+        print("=" * 60)
 
 # COMMANDY UDĚLUJÍCÍ OPRÁVNĚNÍ A SILNÉ COMMANDY    
 class odlesk_plesky:
@@ -545,7 +607,7 @@ def ziskej_dostupne_prikazy():
         'mluvic': ['vycisti', 'rekni'],
         'pleska': ['infosys', 'kdo_su_ja', 'jaky_cislo_jsi'],
         'sevcik': ['vypis_slozky_ve_slozce', 'co_je_tu', 'otevri_soubor', 'zkopiruj_soubor_do', 'znovunacti'],
-        'pripojuju': ['vazne_jsem_onlajn', 'kudy_jdes', 'ktera_ip_je_moje'],
+        'pripojuju': ['vazne_jsem_onlajn', 'kudy_jdes', 'ktera_ip_je_moje', 'box_adres'],
         'odlesk_plesky': ['bud_buh']
     }
     
@@ -584,7 +646,7 @@ def dokonci_prikaz(text, stav):
                 'mluvic': ['vycisti', 'rekni'],
                 'pleska': ['infosys', 'kdo_su_ja', 'jaky_cislo_jsi'],
                 'sevcik': ['vypis_slozky_ve_slozce', 'co_je_tu', 'otevri_soubor', 'zkopiruj_soubor_do', 'znovunacti'],
-                'pripojuju': ['vazne_jsem_onlajn', 'kudy_jdes', 'ktera_ip_je_moje'],
+                'pripojuju': ['vazne_jsem_onlajn', 'kudy_jdes', 'ktera_ip_je_moje', 'box_adres'],
                 'odlesk_plesky': ['bud_buh']
             }
             if trida in tridy:
