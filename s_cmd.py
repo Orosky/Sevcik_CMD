@@ -204,38 +204,105 @@ def zobraz_okno_verze(typ):
 class pls:
     @staticmethod
     def helpni():
-        print("Help příkazy:")
-        print("pls.helpniclass pro pomoc s classami")
+        print("📖 ZÁKLADNÍ NÁPOVĚDA – Ševčík CMD")
+        print("=" * 50)
+        print("Základní příkazy:")
+        print("  pls.helpni()        - Základní nápověda")
+        print("  pls.helpall()       - Kompletní seznam příkazů")
+        print("  pls.help('trida')   - Nápověda ke konkrétní třídě")
+        print("  pls.info_o_tobe()   - Informace o aplikaci")
+        print("")
+        print("💡 Tip: Používej TAB pro doplňování příkazů")
+        print("=" * 50)
 
     @staticmethod
-    def helpniclass():
-        print("==============================================")
-        print("| {:<10} | {:<35} |".format("Třída", "Popis"))
-        print("==============================================")
-        print("| {:<10} | {:<35} |".format("pls", "Pomáhá a udává samotné informace"))
-        print("|            | dotazovacím jazyku Ševčík.            |")
-        print("----------------------------------------------")
-        print("| {:<10} | {:<35} |".format("mluvic", "Spravuje nastavení konzole."))
-        print("----------------------------------------------")
-        print("| {:<10} | {:<35} |".format("pleska", "Čte informace ze systému."))
-        print("----------------------------------------------")
-        print("| {:<10} | {:<35} |".format("sevcik", "Práce se soubory a složkami."))
-        print("----------------------------------------------")
-        print("| {:<10} | {:<35} |".format("pripojuju", "Zobrazuje síťové nastavení."))
-        print("----------------------------------------------")
-        print("| {:<10} | {:<35} |".format("odlesk_plesky", "Silné příkazy s oprávněními."))
-        print("==============================================")
+    def helpall():
+        print("📚 KOMPLETNÍ NÁPOVĚDA – VŠECHNY PŘÍKAZY")
+        print("=" * 70)
+
+        print("\n🔹 pls – nápověda a info")
+        print("  pls.helpni()")
+        print("  pls.helpall()")
+        print("  pls.help('trida')")
+        print("  pls.info_o_tobe()")
+
+        print("\n🔹 mluvic – práce s konzolí")
+        print("  mluvic.vycisti()           - Vyčistí konzoli")
+        print("  mluvic.rekni('text')       - Vypíše text přes Ševčík CMD")
+
+        print("\n🔹 pleska – informace o systému")
+        print("  pleska.infosys()           - Informace o systému")
+        print("  pleska.kdo_su_ja()         - Aktuální uživatel")
+        print("  pleska.jaky_cislo_jsi()    - Verze aplikace")
+
+        print("\n🔹 sevcik – práce se soubory")
+        print("  sevcik.vypis_slozky_ve_slozce('/cesta')")
+        print("  sevcik.co_je_tu('/cesta')")
+        print("  sevcik.otevri_soubor('/soubor')")
+        print("  sevcik.zkopiruj_soubor_do('/soubor', '/cil')")
+        print("  sevcik.znovunacti()        - Restart Ševčík CMD")
+
+        print("\n🔹 pripojuju – síťové nástroje")
+        print("  pripojuju.vazne_jsem_onlajn()")
+        print("  pripojuju.vazne_jsem_onlajn('cloudflare')")
+        print("  pripojuju.kudy_jdes('google.com')")
+        print("  pripojuju.ktera_ip_je_moje()")
+        print("  pripojuju.box_adres()")
+
+        print("\n🔹 odlesk_plesky – silné / admin příkazy")
+        print("  odlesk_plesky.bud_buh()    - Spustí CMD jako ADMIN")
+
+        print("\n✖ Ukončení aplikace:")
+        print("  koncim_s_tebou")
+
+        print("=" * 70)
 
     @staticmethod
-    def info_o_tobe():
-        print(f"Verze této aplikace je: {Version}")
-        print(f"Gitbook nápověda:    https://sevcik-cmd.gitbook.io/sevcik-cmd-docs")
-        print(f"Webová stránka:     (zatím není k dispozici)")
-        print(f"Vaše distrubuce:    {Distrubution}")
-        if Distrubution == "User distribution":
-            print("Neplacená verze")
+    def help(trida):
+        trida = trida.lower()
+
+        napoveda = {
+            "pls": [
+                "pls.helpni()",
+                "pls.helpall()",
+                "pls.help('trida')",
+                "pls.info_o_tobe()"
+            ],
+            "mluvic": [
+                "mluvic.vycisti()",
+                "mluvic.rekni('text')"
+            ],
+            "pleska": [
+                "pleska.infosys()",
+                "pleska.kdo_su_ja()",
+                "pleska.jaky_cislo_jsi()"
+            ],
+            "sevcik": [
+                "sevcik.vypis_slozky_ve_slozce('/cesta')",
+                "sevcik.co_je_tu('/cesta')",
+                "sevcik.otevri_soubor('/soubor')",
+                "sevcik.zkopiruj_soubor_do('/soubor','/cil')",
+                "sevcik.znovunacti()"
+            ],
+            "pripojuju": [
+                "pripojuju.vazne_jsem_onlajn()",
+                "pripojuju.kudy_jdes('adresa')",
+                "pripojuju.ktera_ip_je_moje()",
+                "pripojuju.box_adres()"
+            ],
+            "odlesk_plesky": [
+                "odlesk_plesky.bud_buh()"
+            ]
+        }
+
+        if trida in napoveda:
+            print(f"📂 Nápověda pro třídu: {trida}")
+            print("=" * 40)
+            for p in napoveda[trida]:
+                print(" ", p)
+            print("=" * 40)
         else:
-            print("Placená distribuce")
+            print("❌ Neznámá třída. Použij pls.helpall()")
 
 
 # COMMANDY PRO PRÁCI S KONZOLÍ
