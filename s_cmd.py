@@ -63,7 +63,7 @@ print("")
 print("")
 
 
-Version = "0.0.2 [ALPHA TESTING VERSION]"
+Version = "0.0.2"
 Distrubution = "User distribution"
 
 # KONTROLA VERZE
@@ -830,3 +830,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
