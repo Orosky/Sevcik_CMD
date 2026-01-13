@@ -32,7 +32,7 @@ Projekt je zaměřen na:
 
 Postup a aktuální verze jsou popsány v oficiální dokumentaci:
 
-🔗 [Stažení Ševčík CMD](https://sevcik-cmd.gitbook.io/sevcik-cmd-docs/downloading)
+🔗 [Stažení Ševčík CMD](https://sevcik-cmd.gitbook.io/sevcik-cmd-docs/downloading](https://sevcik-cmd.gitbook.io/sevcik-cmd-docs/0-basics/0.1-downloading)
 
 Příklad instalace:
 
