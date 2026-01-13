@@ -1,33 +1,47 @@
-# Projekt Ševčík CMD
+# Ševčík CMD
 
-## Popis  
-Tento projekt slouží jako CMD příkazový řádek, který nahrazuje předinstalované řádky v některých funkcích
+**Ševčík CMD** je příkazový systém (CLI / DSL) vytvořený v Pythonu, určený především pro operační systém **Windows**. Slouží jako rozšiřitelný příkazový nástroj s vlastní sadou příkazů a tříd.
 
-## Funkce / vlastnosti  
-- Podpora příkazového jazyka / skriptování založeného na Pythonu (Domain‑Specific Language / DSL). :contentReference[oaicite:0]{index=0}  
-- Podpora více tříd / modulů:  
-  - `PLS CLASS` :contentReference[oaicite:1]{index=1}  
-  - `PLESKA CLASS` :contentReference[oaicite:2]{index=2}  
-  - `Sevcik class` (souborová a složková správa) :contentReference[oaicite:3]{index=3}  
-  - `MLUVIC CLASS` :contentReference[oaicite:4]{index=4}  
-  - `PRIPOJUJU CLASS` (zřejmě síťové / připojovací operace) :contentReference[oaicite:5]{index=5}  
-- Podpora systémových informací a základních operací popsaných v dokumentaci. :contentReference[oaicite:6]{index=6}  
+📖 Kompletní a aktuální dokumentace je dostupná zde:  
+👉 [Ševčík CMD Docs](https://sevcik-cmd.gitbook.io/sevcik-cmd-docs/)
 
-## Požadavky  
-- Systém podporovaný pouze na Windows — projekt dle dokumentace v tuto chvíli nefunguje spolehlivě na jiných operačních systémech. :contentReference[oaicite:7]{index=7}
+---
 
-## Dokumentace  
-Úplná dokumentace je dostupná zde:  
-[Ševčík CMD Docs](https://sevcik-cmd.gitbook.io/sevcik-cmd-docs) :contentReference[oaicite:8]{index=8}
+## 📌 Co je Ševčík CMD?
 
-## Použití  
-1. Prostuduj dokumentaci (odkaz výše), zvláště sekce o stažení a jednotlivých třídách.  
-2. Nainstaluj a spusť projekt podle pokynů v dokumentaci (výslovně podporovaný OS: Windows).  
-3. Využij moduly (`PLS CLASS`, `PLESKA CLASS`, …) podle tvých potřeb — například správa souborů, složek, síťové operace apod.  
-4. V případě problémů mrkni do sekce „Troubleshooting / Minor errors“ v dokumentaci. :contentReference[oaicite:9]{index=9}
+Ševčík CMD je **Domain-Specific Language (DSL)** navržený pro práci v příkazové řádce. Poskytuje vlastní příkazy, logiku a strukturu, které nejsou součástí standardního `cmd.exe`.
 
-## Licence & autoreři  
-*(Pokud stránka uvádí licenci / autory — doplň sem.)*  
+Projekt je zaměřen na:
 
-## Kontakt / podpora  
-*(Pokud je na stránce kontakt / issue tracker — doplň sem.)*  
+- Práci se soubory a složkami  
+- Získávání systémových informací  
+- Rozšiřitelnost pomocí tříd  
+- Experimentální příkazové funkce  
+
+---
+
+## 🖥️ Požadavky
+
+- **Operační systém:** Windows (Linux pro neoficiální netestovanou verzi)
+- **Python:** nainstalovaný Python 3.x  
+- **Terminál:** cmd / PowerShell  
+
+---
+
+## 📦 Stažení a instalace
+
+Postup a aktuální verze jsou popsány v oficiální dokumentaci:
+
+🔗 [Stažení Ševčík CMD](https://sevcik-cmd.gitbook.io/sevcik-cmd-docs/downloading)
+
+Příklad instalace:
+
+```bash
+# Naklonujte repozitář
+git clone https://github.com/your-repo/sevcik-cmd.git
+
+# Přejděte do složky projektu
+cd sevcik-cmd
+
+# Spusťte Ševčík CMD
+python main.py
