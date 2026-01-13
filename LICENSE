@@ -1,117 +1,123 @@
-──────────────────────────────────────────────────────────
-ENGLISH VERSION (EU / CZ – LIABILITY EXCLUSION MAXIMUM ALLOWED BY LAW)
-──────────────────────────────────────────────────────────
+ENGLISH VERSION
 
-Copyright (c) 2026
+Copyright © 2026 Orosky (https://github.com/Orosky)
+All rights reserved.
 
-This software is protected by copyright law.
+1. Definitions
 
-The author hereby grants a non-exclusive, royalty-free, non-transferable license to any natural or legal person, including companies and other commercial entities, who lawfully obtains a copy of this software (the “Software”), to use, run, install, download, copy, and redistribute the Software for both non-commercial and commercial purposes, solely in its original, complete, and unmodified form.
+For the purposes of this License:
 
-License Conditions and Restrictions
+“Software” means the computer program, including any accompanying files, documentation, and materials, as originally distributed by the Author.
 
-No modifications permitted
-You may not modify, adapt, translate, alter, reverse-engineer, decompile,
-disassemble, or create derivative works based on the Software, in whole or
-in part.
+“Author” means the natural or legal person who holds the copyright to the Software.
 
-No distribution of modified versions
-Distribution of modified, partially modified, or adapted versions of the
-Software is strictly prohibited.
+2. Grant of License
 
-Redistribution conditions
-The Software may be redistributed, including as part of commercial
-activities or services, only if it remains entirely original and
-unmodified, and this license text is included in full.
+The Author hereby grants to any natural or legal person who lawfully obtains a copy of the Software a non-exclusive, royalty-free, non-transferable license to use, run, install, download, copy, and redistribute the Software, for both commercial and non-commercial purposes, provided that the Software is used and distributed solely in its original, complete, and unmodified form.
 
-No sublicensing or transfer of rights
-This license does not grant the right to sublicense, sell, or otherwise
-transfer the Software or the rights granted under this license, except for
-the permitted redistribution of the original, unmodified Software.
+3. Restrictions
 
-Attribution
-Attribution of the author is not required, unless required by mandatory
-applicable law.
+The Licensee shall not, and is not permitted to:
 
-Warranty Disclaimer and Limitation of Liability
+a) modify, adapt, translate, alter, arrange, or otherwise change the Software, in whole or in part;
+b) create derivative works based on the Software;
+c) reverse engineer, decompile, or disassemble the Software, except to the extent expressly permitted by mandatory applicable law;
+d) distribute, publish, or make available any modified, partially modified, or adapted version of the Software.
 
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT ANY WARRANTIES OF ANY KIND,
-WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO,
-WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
-NON-INFRINGEMENT.
+4. Redistribution
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE AUTHOR SHALL NOT
-BE LIABLE FOR ANY DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION,
-DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, OR SPECIAL DAMAGES,
-LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, OR ANY OTHER FINANCIAL
-OR NON-FINANCIAL LOSS, ARISING OUT OF OR IN CONNECTION WITH THE USE,
-MISUSE, OR INABILITY TO USE THE SOFTWARE, REGARDLESS OF THE LEGAL BASIS OF
-THE CLAIM (CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, OR OTHERWISE),
-EVEN IF THE AUTHOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+Redistribution of the Software, including within commercial activities, products, or services, is permitted only if:
 
-Nothing in this license shall exclude or limit liability to the extent such
-liability cannot be excluded or limited under applicable mandatory law.
+the Software remains entirely original, complete, and unmodified; and
 
-By using or redistributing the Software, you agree to the terms of this
-license.
+this License text is included in full with each copy of the Software.
 
-──────────────────────────────────────────────────────────
-CZECH VERSION / ČESKÁ VERZE (ČR / EU – MAXIMÁLNÍ VYLOUČENÍ ODPOVĚDNOSTI)
-──────────────────────────────────────────────────────────
+5. No Sublicensing or Transfer of Rights
 
-Copyright (c) 2026
+This License does not grant any right to sublicense, sell, assign, or otherwise transfer the Software or the rights granted herein, except for the permitted redistribution of the original, unmodified Software in accordance with this License.
 
-Tento software je chráněn autorským právem.
+6. Attribution
 
-Autor tímto uděluje nevýhradní, bezúplatnou a nepřevoditelnou licenci
-jakékoli fyzické nebo právnické osobě, včetně obchodních společností a jiných
-podnikatelských subjektů, která oprávněně získá kopii tohoto softwaru
-(dále jen „Software“), a to k jeho užívání, provozování, instalaci,
-stahování, kopírování a šíření, a to jak pro nekomerční, tak i komerční
-účely, výhradně v jeho původní, úplné a nezměněné podobě.
+Attribution of the Author is not required, unless required by mandatory applicable law.
 
-Licenční podmínky a omezení
+7. Warranty Disclaimer
 
-Zákaz úprav
-Není dovoleno Software jakkoli upravovat, měnit, přizpůsobovat, překládat,
-dekompilovat, rozebírat, provádět zpětné inženýrství ani vytvářet odvozená
-díla, a to ani zčásti.
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT ANY WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-Zákaz šíření upravených verzí
-Šíření upravených, částečně upravených nebo jinak pozměněných verzí
-Softwaru je výslovně zakázáno.
+8. Limitation of Liability
 
-Podmínky šíření a komerčního využití
-Software smí být šířen, včetně jeho využití v rámci podnikatelské
-činnosti, obchodních služeb nebo interních firemních procesů, pouze
-v původní, úplné a nezměněné podobě, a společně s tímto licenčním
-textem.
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE AUTHOR SHALL NOT BE LIABLE FOR ANY DAMAGES WHATSOEVER, INCLUDING DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, OR SPECIAL DAMAGES, LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, OR ANY OTHER FINANCIAL OR NON-FINANCIAL LOSS, ARISING OUT OF OR IN CONNECTION WITH THE USE, MISUSE, OR INABILITY TO USE THE SOFTWARE, REGARDLESS OF THE LEGAL BASIS OF THE CLAIM.
 
-Zákaz podlicencování a převodu práv
-Tato licence neopravňuje k podlicencování, prodeji ani jinému převodu
-Softwaru nebo práv z této licence vyplývajících, s výjimkou povoleného
-šíření původní, nezměněné verze Softwaru.
+Nothing in this License shall exclude or limit liability to the extent that such liability cannot be excluded or limited under mandatory applicable law.
 
-Uvedení autora
-Uvedení autora není vyžadováno, nestanoví-li kogentní právní předpis
-jinak.
+9. Governing Law
 
-Vyloučení záruk a omezení odpovědnosti
+This License shall be governed by and construed in accordance with the laws of the Czech Republic, excluding conflict-of-law rules.
 
-SOFTWARE JE POSKYTOVÁN „TAK JAK JE“, BEZ JAKÝCHKOLI ZÁRUK, AŤ JIŽ
-VÝSLOVNÝCH, IMPLICITNÍCH NEBO ZÁKONNÝCH, VČETNĚ MIMO JINÉ ZÁRUK
-PRODEJNOSTI, VHODNOSTI PRO KONKRÉTNÍ ÚČEL A NEPORUŠENÍ PRÁV TŘETÍCH OSOB.
+10. Language
 
-V MAXIMÁLNÍM ROZSAHU POVOLENÉM PLATNÝMI PRÁVNÍMI PŘEDPISY AUTOR
-NEODPOVÍDÁ ZA JAKOUKOLI ÚJMU, MAJETKOVOU I NEMAJETKOVOU, PŘÍMOU I
-NEPŘÍMOU, VČETNĚ UŠLÉHO ZISKU, ZTRÁTY DAT, PŘERUŠENÍ PODNIKÁNÍ NEBO JINÉ
-ŠKODY, KTERÁ VZNIKNE V SOUVISLOSTI S UŽÍVÁNÍM, NEUŽÍVÁNÍM NEBO NEMOŽNOSTÍ
-UŽÍVÁNÍ SOFTWARU, A TO BEZ OHLEDU NA PRÁVNÍ DŮVOD VZNIKU ODPOVĚDNOSTI
-(SMLUVNÍ, DELIKTNÍ, Z NEDBALOSTI ČI JINÝ).
+This License is provided in English and Czech. In the event of any discrepancy, the Czech version shall prevail.
 
-Nic v této licenci nevylučuje ani neomezuje odpovědnost v rozsahu, v jakém
-ji nelze podle kogentních ustanovení platných právních předpisů vyloučit
-nebo omezit.
+By using or redistributing the Software, you agree to the terms of this License.
 
-Používáním nebo šířením Softwaru vyjadřujete souhlas s těmito licenčními
-podmínkami.
+ČESKÁ VERZE
+
+Copyright © 2026 Orosky (https://github.com/Orosky)
+Všechna práva vyhrazena.
+
+1. Definice
+
+Pro účely této licence:
+
+„Software“ znamená počítačový program, včetně veškerých souborů, dokumentace a doprovodných materiálů, tak jak je původně šířen Autorem.
+
+„Autor“ znamená fyzickou nebo právnickou osobu, která je nositelem autorských práv k Softwaru.
+
+2. Udělení licence
+
+Autor tímto uděluje každé fyzické nebo právnické osobě, která oprávněně získá kopii Softwaru, nevýhradní, bezúplatnou a nepřevoditelnou licenci k užívání, provozování, instalaci, stahování, kopírování a šíření Softwaru, a to jak pro komerční, tak i nekomerční účely, výhradně v jeho původní, úplné a nezměněné podobě.
+
+3. Omezení licence
+
+Nabyvatel licence není oprávněn:
+
+a) Software jakkoli upravovat, měnit, přizpůsobovat, překládat nebo jinak pozměňovat, a to ani zčásti;
+b) vytvářet odvozená díla ze Softwaru;
+c) provádět dekompilaci, rozebírání nebo zpětné inženýrství Softwaru, s výjimkou případů výslovně povolených kogentními právními předpisy;
+d) šířit nebo jinak zpřístupňovat upravené, částečně upravené či odvozené verze Softwaru.
+
+4. Šíření Softwaru
+
+Software smí být šířen, včetně jeho využití v rámci podnikatelské činnosti, produktů nebo služeb, pouze pokud:
+
+zůstává v původní, úplné a nezměněné podobě; a
+
+je k němu přiložen tento licenční text v plném znění.
+
+5. Zákaz podlicencování a převodu práv
+
+Tato licence neopravňuje k podlicencování, prodeji, postoupení ani jinému převodu Softwaru nebo práv z této licence vyplývajících, s výjimkou povoleného šíření původní, nezměněné verze Softwaru dle této licence.
+
+6. Uvedení autora
+
+Uvedení autora není vyžadováno, nestanoví-li kogentní právní předpis jinak.
+
+7. Vyloučení záruk
+
+SOFTWARE JE POSKYTOVÁN „TAK JAK JE“, BEZ JAKÝCHKOLI ZÁRUK, AŤ JIŽ VÝSLOVNÝCH, IMPLICITNÍCH NEBO ZÁKONNÝCH, VČETNĚ ZÁRUK PRODEJNOSTI, VHODNOSTI PRO KONKRÉTNÍ ÚČEL A NEPORUŠENÍ PRÁV TŘETÍCH OSOB.
+
+8. Omezení odpovědnosti
+
+V MAXIMÁLNÍM ROZSAHU POVOLENÉM PLATNÝMI PRÁVNÍMI PŘEDPISY AUTOR NEODPOVÍDÁ ZA JAKOUKOLI MAJETKOVOU ANI NEMAJETKOVOU ÚJMU, PŘÍMOU I NEPŘÍMOU, VČETNĚ UŠLÉHO ZISKU, ZTRÁTY DAT, PŘERUŠENÍ PODNIKÁNÍ NEBO JINÉ ŠKODY, KTERÁ VZNIKNE V SOUVISLOSTI S UŽÍVÁNÍM, NEUŽÍVÁNÍM NEBO NEMOŽNOSTÍ UŽÍVÁNÍ SOFTWARU, BEZ OHLEDU NA PRÁVNÍ DŮVOD VZNIKU ODPOVĚDNOSTI.
+
+Nic v této licenci nevylučuje ani neomezuje odpovědnost v rozsahu, v jakém ji nelze podle kogentních ustanovení platných právních předpisů vyloučit nebo omezit.
+
+9. Rozhodné právo
+
+Tato licence se řídí právním řádem České republiky, s vyloučením kolizních norem.
+
+10. Jazyk
+
+Tato licence je vyhotovena v českém a anglickém jazyce. V případě rozporu má přednost české znění.
+
+Používáním nebo šířením Softwaru vyjadřujete souhlas s těmito licenčními podmínkami.
