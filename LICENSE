@@ -1,57 +1,80 @@
-──────────────────────────────────────────────────────────
-ENGLISH VERSION
-──────────────────────────────────────────────────────────
+-----------------------
+CZ
+-----------------------
+Development Branch Restricted License (DBRL)
+Copyright (c) 2026 SCMD
 
-Copyright (c) [YEAR] [AUTHOR]
+Tato licence se vztahuje výhradně na zdrojový kód, binární soubory
+a související materiály umístěné ve větvi "develop" (nebo jiné
+vývojové větvi) tohoto repozitáře.
 
-Permission is hereby granted to any person obtaining a copy of this software 
-(the "Software") to use, download, copy, and redistribute the Software in its 
-original, unmodified form.
+1. Povolené použití
+Tento software smí být používán, studován a upravován výhradně:
+a) vývojáři softwaru
+b) testery softwaru
+a to pouze za účelem vývoje, testování, ladění a hodnocení.
 
-The following restrictions apply:
+2. Zakázané použití
+Bez výslovného písemného souhlasu držitele autorských práv je zakázáno:
+a) použití softwaru v produkčním prostředí
+b) distribuce, sublicencování nebo zveřejnění třetím stranám
+c) komerční využití
+d) použití koncovými uživateli
 
-1. You MAY NOT modify, alter, edit, reverse-engineer, decompile, or create 
-   derivative works based on the Software, in whole or in part.
+3. Vlastnictví
+Veškerá práva, název a duševní vlastnictví zůstávají výhradně
+držiteli autorských práv.
 
-2. You MAY NOT distribute modified versions of the Software.
+4. Bez záruky
+Software je poskytován "TAK, JAK JE", bez jakýchkoli záruk,
+výslovných či implicitních. Držitel autorských práv nenese
+odpovědnost za jakékoli škody vzniklé použitím tohoto softwaru.
 
-3. You MAY distribute the Software only in its original, unmodified form.
+5. Ukončení licence
+Porušením kteréhokoli ustanovení této licence dochází k jejímu
+okamžitému ukončení bez nároku na další používání softwaru.
 
-4. No attribution is required when redistributing the Software.
-
-The Software is provided "as is", without warranty of any kind, express or 
-implied, including but not limited to the warranties of merchantability, 
-fitness for a particular purpose, and non-infringement.
-
-By using or redistributing the Software, you agree to these terms.
+Tato licence se vztahuje pouze na vývojové větve repozitáře.
+Pro produkční verzi se může vztahovat jiná licence.
 
 
+-----------------------
+EN
+-----------------------
+Development Branch Restricted License (DBRL)
+Copyright (c) 2026 SCMD
 
-──────────────────────────────────────────────────────────
-CZECH VERSION / ČESKÁ VERZE
-──────────────────────────────────────────────────────────
+This license applies exclusively to the source code, binaries,
+and related materials contained in the "develop" branch (or any
+other development branch) of this repository.
 
-Copyright (c) [ROK] [AUTOR]
+1. Permitted Use
+This software may be used, studied, and modified exclusively by:
+a) software developers
+b) software testers
+solely for the purposes of development, testing, debugging,
+and evaluation.
 
-Každé osobě, která získá kopii tohoto softwaru 
-(dále jen „Software“), je tímto uděleno povolení používat, 
-stahovat, kopírovat a šířit Software v jeho původní, 
-neupravené podobě.
+2. Prohibited Use
+Without explicit written permission from the copyright holder,
+it is strictly prohibited to:
+a) use the software in a production environment
+b) distribute, sublicense, or disclose it to third parties
+c) use it for commercial purposes
+d) allow use by end users
 
-Platí následující omezení:
+3. Ownership
+All rights, title, and intellectual property remain the exclusive
+property of the copyright holder.
 
-1. NENÍ dovoleno Software jakkoli upravovat, měnit, 
-   editovat, dekompilovat, provádět reverse engineering 
-   nebo vytvářet odvozená díla, a to ani částečně.
+4. No Warranty
+The software is provided "AS IS", without warranty of any kind,
+express or implied. The copyright holder shall not be liable for
+any damages arising from the use of this software.
 
-2. NENÍ dovoleno šířit upravené verze Softwaru.
+5. Termination
+Any violation of this license results in immediate termination
+of the right to use the software.
 
-3. Software lze šířit pouze v původní, neupravené podobě.
-
-4. Není nutné uvádět autora při dalším šíření Softwaru.
-
-Software je poskytován „tak jak je“, bez jakýchkoliv záruk, 
-výslovných či implicitních, včetně mimo jiné záruk 
-prodejnosti, vhodnosti pro konkrétní účel nebo porušení práv.
-
-Použitím nebo šířením Softwaru souhlasíte s těmito podmínkami.
+This license applies only to development branches of the repository.
+A different license may apply to production releases.
