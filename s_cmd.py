@@ -241,6 +241,7 @@ class pls:
         print("  sevcik.otevri_soubor('/soubor')")
         print("  sevcik.zkopiruj_soubor_do('/soubor', '/cil')")
         print("  sevcik.znovunacti()        - Restart Ševčík CMD")
+        print("  sevcik.smaz_to()        -  Smazání souboru")
 
         print("\n🔹 pripojuju – síťové nástroje")
         print("  pripojuju.vazne_jsem_onlajn()")
@@ -858,3 +859,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
