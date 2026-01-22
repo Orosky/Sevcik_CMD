@@ -12,7 +12,7 @@ Není určena pro běžné uživatele. Používej ji **pouze pokud víš, co dě
 - **Verze:** `0.0.3 - testing`  
 - **Distribuce:** User distribution  
 - **Stav:** 🧪 aktivní vývoj / testování  
-- **Platformy:** Windows, Linux, macOS (některé funkce jsou OS-specifické)
+- **Platformy:** Windows
 
 ---
 
